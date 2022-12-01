@@ -3,6 +3,10 @@
   "context": "Hi! there",
   "socialsList": [
     {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/jd615645"
+    },
+    {
       "name": "Twitter",
       "url": "https://twitter.com/_twjmy"
     },
