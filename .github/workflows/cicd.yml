@@ -22,8 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-      USER_NAME   : jd615645
-      USER_EMAIL  : jd615645@gmail.com
+      USER_NAME   : twjmy
+      USER_EMAIL  : twjmy@msn.com
       PUBLISH_DIR : ./dist
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -35,12 +35,12 @@ jobs:
         with:
           node-version: '16'
           check-latest: true
-      - name: Install & Build
+      - name: Install & Build 安裝與建置
         run: |
           npm install
           npm run build
       # Runs a single command using the runners shell
-      - name: Depoloy to gh page
+      - name: Depoloy to gh page 發佈到 GitHub Page
         run: |
           cd $PUBLISH_DIR
           git init
