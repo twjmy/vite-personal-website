@@ -28,20 +28,16 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: '16'
           check-latest: true
-      - name: Install & Build 安裝與建置
+      # Run commands using the runner shell
+      - name: 安裝、建置 npm 並發佈到 gh-pages
         run: |
           npm install
           npm run build
-      # Runs a single command using the runners shell
-      - name: Depoloy to gh page 發佈到 GitHub Page
-        run: |
           cd $PUBLISH_DIR
           git init
           git config --local user.name $USER_NAME
@@ -52,4 +48,3 @@ jobs:
           git add --all
           git commit -m "Deploy to Github pages"
           git push origin gh-pages -f
-          echo 🐈 deploy gh-pages complete.
